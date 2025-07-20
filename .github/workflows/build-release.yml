@@ -22,7 +22,7 @@ on:
       lan_addr:
         description: 'Setting default LAN address'
         required: true
-        default: '10.0.0.1'
+        default: '192.168.10.1'
         type: string
       root_password:
         description: 'Setting default root password (Default is Passwaod)'
@@ -107,8 +107,8 @@ jobs:
       id: compile
       continue-on-error: true
       env:
-        git_name: ${{ keben12345 }}
-        git_password: ${{ keben12345password }}
+        git_name: ${{ secrets.keben12345 }}
+        git_password: ${{ secrets.keben12345password }}
       run: |
         export ${{ github.event.inputs.build_options }} LAN=${{ github.event.inputs.lan_addr }} Wifi_Name="${{ github.event.inputs.wifi_name }}" Wifi_Password="${{ github.event.inputs.wifi_password }}"  USE_GCC13=y
         [ ${{ github.event.inputs.high_power }} = 'true' ] && export High_Power=y
