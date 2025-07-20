@@ -107,8 +107,8 @@ jobs:
       id: compile
       continue-on-error: true
       env:
-        git_name: ${{ secrets.username }}
-        git_password: ${{ secrets.password }}
+        git_name: ${{ keben12345 }}
+        git_password: ${{ keben12345password }}
       run: |
         export ${{ github.event.inputs.build_options }} LAN=${{ github.event.inputs.lan_addr }} Wifi_Name="${{ github.event.inputs.wifi_name }}" Wifi_Password="${{ github.event.inputs.wifi_password }}"  USE_GCC13=y
         [ ${{ github.event.inputs.high_power }} = 'true' ] && export High_Power=y
