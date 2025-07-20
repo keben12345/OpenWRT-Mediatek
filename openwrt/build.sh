@@ -35,7 +35,7 @@ fi
 REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
 
 # Set mirror variable
-if [ "$REPO_URL" = "https://github.com/zhiern/OpenWRT-Mediatek" ]; then
+if [ "$REPO_URL" = "https://github.com/keben12345/OpenWRT-Mediatek" ]; then
     export mirror="http://127.0.0.1:8080"
 else
     export mirror="https://init.kejizero.online"
@@ -85,7 +85,7 @@ if [ "$1" != "Netcore-N60" ] &&
 fi
 
 # lan
-[ -n "$LAN" ] && export LAN="$LAN" || export LAN="10.0.0.1"
+[ -n "$LAN" ] && export LAN="$LAN" || export LAN="192.168.10.1"
 
 # wifi_name
 [ -n "$Wifi_Name" ] && export Wifi_Name="$Wifi_Name" || export Wifi_Name="ZeroWrt"
